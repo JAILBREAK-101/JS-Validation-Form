@@ -1,0 +1,198 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+}
+
+#wrapper {
+    background-color: lightgreen;
+    min-height: 100%;
+    display: flex;
+    /* When flex direction is row, justify content is horizontal, and align-items is vertical
+
+    When flex direction is column, justify content is vertical, and align-items is horizontal
+    */
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+#main {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+#contact-form {
+    display: flex;
+    flex-direction: column;
+    column-gap: 20px;
+    row-gap: 20px;
+}
+
+#contact-form-header {
+    color: black;
+    opacity: 0.8;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+
+/* Styles for all the fieldsets */
+.fieldset {
+    border: 0;
+}
+
+.input {
+    border: 1px solid grey;
+    border-radius: 4px;
+    outline: 0;
+    padding: 8px 6px;
+}
+
+/* Input error message styles */
+.error-state {
+    border: 1px solid red;
+}
+
+.error-message {
+    color: red;
+    font-size: 12px;
+}
+
+/* Input success styles */
+.success-state {
+    border: 1px solid green;
+}
+
+/* Radio button success style */
+.radio-success-state {
+    background-color: lightgreen;
+    border: 1px solid green;
+}
+
+/* General label and legend styles */
+.label,
+.legend {
+    font-size: 10px;
+}
+
+/* Legend Styles */
+#name-legend {
+    display: none;
+}
+
+/* Input and Radio group styles -- Group selector (Element one, Element two) */
+#name-input-group,
+#query-radio-group {
+    display: flex;
+    flex-direction: row;
+    column-gap: 10px;
+}
+
+/* Name input group styles */
+#name-input-group>.input-group {
+    width: 100%;
+}
+
+/* Input group styles */
+.input-group {
+    display: flex;
+    flex-direction: column;
+    /* when flex direction is column, the column gap becomes the row-gap, and the row-gap becomes the column gap*/
+    row-gap: 5px;
+}
+
+/* Query type legend styles */
+#query-type-legend {
+    margin-bottom: 5px;
+}
+
+/* Query radio group styles */
+#query-radio-group {
+    display: flex;
+
+    /* CSS Nesting */
+    /* &>* {
+        display: none;
+    } */
+}
+
+/* Radio group styles */
+.radio-group {
+    border: 1px solid black;
+    display: flex;
+    width: 100%;
+    padding: 8px 10px;
+    border: 1px solid grey;
+    border-radius: 4px;
+}
+
+/* Radio button */
+input[type="radio"] {
+    margin-right: 5px;
+}
+
+/* Descendants selector (parent element child element), Direct Selector (parent element > child(ren) element */
+.radio-group>.label,
+.radio-group .label {
+    font-size: 12px;
+}
+
+/* Message Box Fieldset and its children styles */
+.fieldset:nth-of-type(3) {
+
+    /* Applying CSS Nesting */
+    &>.legend {
+        margin-bottom: 5px;
+    }
+
+    &>#message {
+        resize: none;
+        outline: 0;
+        padding: 10px;
+        border-radius: 4px;
+    }
+}
+
+#checkbox-group {
+    display: flex;
+    column-gap: 10px;
+}
+
+/* Sibling selector: element_one + element_two */
+#checkbox-group+.error-message {
+    margin-top: 0;
+}
+
+#submit-button {
+    background: green;
+    color: white;
+    outline: 0;
+    border: 0;
+    padding: 10px;
+    font-weight: bold;
+    border-radius: 4px;
+}
+
+/* Responsive CSS / Media Queries */
+
+/* 375px: Phone */
+@media (min-width: 375px) and (max-width: 600px) {
+
+    #main {
+        margin: 30px;
+    }
+
+    #name-input-group,
+    #query-radio-group {
+        flex-direction: column;
+    }
+}
+
+/* 768px: Tablets */
+/* 1024px: Laptop */

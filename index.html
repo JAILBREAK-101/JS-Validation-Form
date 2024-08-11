@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>CSS Contact Form</title>
+    <link rel="stylesheet" href="./style.css" />
+</head>
+
+<body>
+    <!-- The Contact Form Content-->
+    <div id="wrapper">
+
+        <!--The Card-->
+        <main id="main">
+            <h1 id="contact-form-header">Contact Us</h1>
+
+            <form id="contact-form">
+                <fieldset class="fieldset">
+                    <legend class="legend" id="name-legend">Name</legend>
+
+                    <div id="name-input-group">
+                        <div class="input-group">
+                            <label class="label" for="first-name">First Name *</label>
+                            <input class="input" id="first-name" type="text" />
+                            <span class="error-message"></span>
+                        </div>
+
+                        <div class="input-group">
+                            <label class="label" for="last-name">Last Name *</label>
+                            <input class="input" id="last-name" type="text">
+                            <span class="error-message"></span>
+                        </div>
+
+                    </div>
+                </fieldset>
+
+                <div class="input-group">
+                    <label class="label" for="email-address">Email Address *</label>
+                    <input class="input" id="email-address" type="email">
+                    <span class="error-message"></span>
+                </div>
+
+                <fieldset class="fieldset">
+                    <legend class="legend" id="query-type-legend">Query Type *</legend>
+
+                    <div id="query-radio-group">
+
+                        <div class="radio-group">
+                            <input class="input query-type" name="query-type" id="general-query" type="radio" />
+                            <label class="label" for="general-query">General Enquiry</label>
+                        </div>
+
+                        <div class="radio-group">
+                            <input class="input query-type" name="query-type" id="support-request" type="radio" />
+                            <label class="label" for="support-request">Support Request</label>
+                        </div>
+                    </div>
+
+                    <p class="error-message"></p>
+                </fieldset>
+
+                <fieldset class="fieldset">
+                    <legend class="legend" id="message-legend">Message *</legend>
+                    <textarea rows="5" cols="50" id="message"></textarea>
+                    <p class="error-message"></p>
+                </fieldset>
+
+                <div id="checkbox-group">
+                    <input class="input" id="consent" type="checkbox" />
+                    <label class="label" for="consent">I consent to being contacted by the team *</label>
+                </div>
+                <p class="error-message"></p>
+
+                <input id="submit-button" type="submit" value="Submit" />
+            </form>
+        </main>
+    </div>
+
+    <script src="./script.js"></script>
+</body>
+
+</html>
